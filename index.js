@@ -31,13 +31,13 @@ function creaCard(immagine, title, descrizione) {
 
   const btnDettaglio = document.createElement("a");
   body.appendChild(btnDettaglio);
-  btnDettaglio.className = "btn btn-primary";
+  btnDettaglio.className = "btn btn-primary fw-semibold";
   btnDettaglio.textContent = "Dettaglio";
   btnDettaglio.href = "./detail.html";
 
   const btnModifica = document.createElement("a");
   body.appendChild(btnModifica);
-  btnModifica.className = "btn btn-success ms-2";
+  btnModifica.className = "btn btn-info ms-2 text-white fw-semibold";
   btnModifica.textContent = "Modifica";
   btnModifica.href = "./back-office.html";
 }

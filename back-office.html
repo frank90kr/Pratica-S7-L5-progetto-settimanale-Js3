@@ -12,14 +12,43 @@
     />
   </head>
 
-  <body>
-    <nav class="navbar bg-body-tertiary">
+  <body style="background-color: rgb(29, 49, 115)">
+    <nav class="navbar navbar-expand-lg bg-primary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="./index.html">Homepage</a>
+        <a class="navbar-brand text-white fs-4 fw-semibold" href="./index.html">Music Store</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-white fs-5 ms-3" aria-current="page" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-white fs-5" href="./back-office.html">Back office</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-white fs-5" href="./detail.html" aria-disabled="true">Details</a>
+            </li>
+          </ul>
+          <!--  <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+        </div>
       </div>
     </nav>
     <div class="container">
-      <form>
+      <form class="mt-5 text-white">
         <div class="mb-3">
           <label for="img" class="form-label">Immagine</label>
           <input type="text" class="form-control" id="img" placeholder="inserisci link immagine" />
@@ -40,7 +69,7 @@
           <label for="prezzo" class="form-label">Prezzo</label>
           <input type="text" class="form-control" id="prezzo" placeholder="inserisci prezzo" />
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-success mt-4 w-25 fw-semibold">Submit</button>
       </form>
     </div>
 
