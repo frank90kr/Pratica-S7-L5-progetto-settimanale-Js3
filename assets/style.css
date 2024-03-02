@@ -1,0 +1,10 @@
+body {
+  font-family: "Vollkorn", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.nav-link:hover {
+  background-color: rgba(164, 0, 0, 0.95);
+  border-radius: 10%;
+  transition: 0.5s;
+}

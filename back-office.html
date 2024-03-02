@@ -12,73 +12,64 @@
     />
   </head>
 
-  <body style="background-color: rgb(29, 49, 115)">
-    <nav class="navbar navbar-expand-lg bg-primary">
+  <body data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-danger bg-gradient">
       <div class="container-fluid">
-        <a class="navbar-brand text-white fs-4 fw-semibold" href="./index.html">Music Store</a>
+        <a class="navbar-brand text-white fw-semibold fs-3" href="#">Music Store</a>
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link text-white fs-5 ms-3" aria-current="page" href="./index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active text-white fs-5" href="./back-office.html">Back office</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link text-white fs-5" href="./detail.html" aria-disabled="true">Details</a>
-            </li>
-          </ul>
-          <!--  <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> -->
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-4">
+            <a class="nav-link text-white fs-5 fw-semibold" aria-current="page" href="./index.html">HomePage</a>
+            <a class="nav-link text-white fs-5" href="./back-office.html">Back Office</a>
+          </div>
         </div>
+        <!-- <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
       </div>
     </nav>
     <div class="container">
-      <form class="mt-5 text-white">
+      <form>
         <div class="mb-3">
           <label for="img" class="form-label">Immagine</label>
-          <input type="text" class="form-control" id="img" placeholder="inserisci link immagine" />
+          <input type="text" class="form-control" id="img" placeholder="inserisci link immagine" required />
         </div>
         <div class="mb-3">
           <label for="Titolo" class="form-label">Titolo</label>
-          <input type="text" class="form-control" id="Titolo" placeholder="inserisci titolo" />
+          <input type="text" class="form-control" id="Titolo" placeholder="inserisci titolo" required />
         </div>
         <div class="mb-3">
           <label for="Descrizione" class="form-label">Descrizione</label>
-          <input type="text" class="form-control" id="Descrizione" placeholder="inserisci descrizione" />
+          <input type="text" class="form-control" id="Descrizione" placeholder="inserisci descrizione" required />
         </div>
         <div class="mb-3">
           <label for="brand" class="form-label">Brand</label>
-          <input type="text" class="form-control" id="brand" placeholder="inserisci brand" />
+          <input type="text" class="form-control" id="brand" placeholder="inserisci brand" required />
         </div>
         <div class="mb-3">
           <label for="prezzo" class="form-label">Prezzo</label>
-          <input type="text" class="form-control" id="prezzo" placeholder="inserisci prezzo" />
+          <input type="text" class="form-control" id="prezzo" placeholder="inserisci prezzo" required />
         </div>
-        <button type="submit" class="btn btn-success mt-4 w-25 fw-semibold">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
 
-    <script src="back-office.js"></script>
+    <script src="./back-office.js"></script>
   </body>
 </html>

@@ -1,53 +1,54 @@
 const row = document.getElementsByClassName("row")[0];
 
-function creaCard(immagine, title, descrizione) {
+const apiKey =
+  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWUxOTc0ZjRjNTllYzAwMTk5MGQ2ZTQiLCJpYXQiOjE3MDkzODc4OTQsImV4cCI6MTcxMDU5NzQ5NH0.fJUCEyhI4pIrrVsPe3b_USwlFMg0toReqi7EoMED1gQ";
+
+const url = "https://striveschool-api.herokuapp.com/api/product/";
+
+function creaCard(immagine, title, descrizione, id) {
   const col = document.createElement("div");
-  row.appendChild(col);
   col.className = "col-6 col-md-3";
 
   const card = document.createElement("div");
-  col.appendChild(card);
-  card.className = "card";
-  card.style.width = "18rem";
+  card.className = "card shadow rounded";
+  card.style.height = "22rem";
 
   const img = document.createElement("img");
-  card.appendChild(img);
-  img.className = "card-img-top";
+  img.className = "card-img-top object-fit-cover";
   img.src = immagine;
+  img.style.height = "60%";
 
   const body = document.createElement("div");
-  card.appendChild(body);
   body.className = "card-body";
 
   const h5 = document.createElement("h5");
-  body.appendChild(h5);
-  h5.className = "card-title";
+  h5.className = "card-title fw-semibold";
   h5.textContent = title;
 
   const p = document.createElement("p");
-  body.appendChild(p);
   p.className = "card-text";
   p.textContent = descrizione;
 
   const btnDettaglio = document.createElement("a");
-  body.appendChild(btnDettaglio);
-  btnDettaglio.className = "btn btn-primary fw-semibold";
-  btnDettaglio.textContent = "Dettaglio";
-  btnDettaglio.href = "./detail.html";
+  btnDettaglio.href = `./detail.html?idProdotto=${id}`;
+  btnDettaglio.className = "btn btn-primary btn-sm me-2 w-25";
+  btnDettaglio.innerText = "Info";
 
   const btnModifica = document.createElement("a");
+  btnModifica.href = `./back-office.html?idProdotto=${id}`;
+  btnModifica.className = "btn btn-danger btn-sm";
+  btnModifica.innerText = "Modifica";
+
+  row.appendChild(col);
+  col.appendChild(card);
+  card.appendChild(img);
+  card.appendChild(body);
+  body.appendChild(h5);
+  body.appendChild(p);
+  body.appendChild(btnDettaglio);
   body.appendChild(btnModifica);
-  btnModifica.className = "btn btn-info ms-2 text-white fw-semibold";
-  btnModifica.textContent = "Modifica";
-  btnModifica.href = "./back-office.html";
 }
 
-//Fetch///////////////////
-
-const apiKey =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWUxOTc0ZjRjNTllYzAwMTk5MGQ2ZTQiLCJpYXQiOjE3MDkyODc1NDgsImV4cCI6MTcxMDQ5NzE0OH0.U8XNafNCJbo0Yq6MN0cSl0ysXfdMifNNsggpvqQNsW8";
-const url = "https://striveschool-api.herokuapp.com/api/product/";
-///////////////////////////////////
 fetch(url, {
   method: "GET",
   headers: {
@@ -56,7 +57,6 @@ fetch(url, {
   },
 })
   .then((response) => {
-    console.log(response);
     if (response.ok) {
       return response.json();
     } else {
@@ -72,12 +72,9 @@ fetch(url, {
       throw new Error("Errore nel reperimento dati");
     }
   })
-
   .then((newAppointment) => {
-    console.log(newAppointment);
-
     newAppointment.forEach((oggetto) => {
-      creaCard(oggetto.imageUrl, oggetto.name, oggetto.description, oggetto.brand);
+      creaCard(oggetto.imageUrl, oggetto.name, oggetto.description, oggetto._id);
     });
   })
   .catch((err) => console.log(err));
