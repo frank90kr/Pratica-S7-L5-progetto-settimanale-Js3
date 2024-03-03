@@ -10,12 +10,47 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/style.css" />
   </head>
 
-  <body data-bs-theme="dark">
-    <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
+  <body class="bg-secondary-subtle">
+    <nav class="navbar navbar-expand-lg bg-danger bg-gradient">
       <div class="container-fluid">
-        <a class="navbar-brand" href="./index.html">Homepage</a>
+        <a class="navbar-brand text-white fw-semibold fs-3" href="./index.html">Music Store</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-4">
+            <a class="nav-link text-white fs-5 fw-semibold" aria-current="page" href="#">HomePage</a>
+            <a class="nav-link text-white fs-5" href="./back-office.html">Back Office</a>
+          </div>
+        </div>
+        <a href=""
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="bi bi-person text-white mb-2 me-4"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
+            />
+          </svg>
+        </a>
       </div>
     </nav>
     <div class="container mt-5"></div>

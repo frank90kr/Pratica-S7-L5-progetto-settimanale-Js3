@@ -11,7 +11,7 @@ function creaCard(immagine, title, descrizione, id) {
 
   const card = document.createElement("div");
   card.className = "card shadow rounded";
-  card.style.height = "22rem";
+  card.style.height = "23rem";
 
   const img = document.createElement("img");
   img.className = "card-img-top object-fit-cover";
@@ -31,12 +31,12 @@ function creaCard(immagine, title, descrizione, id) {
 
   const btnDettaglio = document.createElement("a");
   btnDettaglio.href = `./detail.html?idProdotto=${id}`;
-  btnDettaglio.className = "btn btn-primary btn-sm me-2 w-25";
+  btnDettaglio.className = "btn btn-dark btn-sm me-2 w-25 rounded";
   btnDettaglio.innerText = "Info";
 
   const btnModifica = document.createElement("a");
   btnModifica.href = `./back-office.html?idProdotto=${id}`;
-  btnModifica.className = "btn btn-danger btn-sm";
+  btnModifica.className = "btn btn-danger btn-sm rounded";
   btnModifica.innerText = "Modifica";
 
   row.appendChild(col);
