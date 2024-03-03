@@ -5,9 +5,9 @@ const apiKey =
 
 const url = "https://striveschool-api.herokuapp.com/api/product/";
 
-function creaCard(immagine, title, descrizione, id) {
+function creaCard(immagine, title, descrizione, id, price) {
   const col = document.createElement("div");
-  col.className = "col-6 col-md-3";
+  col.className = "col-12 col-md-4";
 
   const card = document.createElement("div");
   card.className = "card shadow rounded";
@@ -39,6 +39,10 @@ function creaCard(immagine, title, descrizione, id) {
   btnModifica.className = "btn btn-danger btn-sm rounded";
   btnModifica.innerText = "Modifica";
 
+  const prezzo = document.createElement("p");
+  p.className = "card-price fs-4 text-dark fw-bold d-flex justify-content-end mx-3";
+  p.textContent = price;
+
   row.appendChild(col);
   col.appendChild(card);
   card.appendChild(img);
@@ -47,6 +51,7 @@ function creaCard(immagine, title, descrizione, id) {
   body.appendChild(p);
   body.appendChild(btnDettaglio);
   body.appendChild(btnModifica);
+  body.appendChild(prezzo);
 }
 
 fetch(url, {
@@ -74,7 +79,7 @@ fetch(url, {
   })
   .then((newAppointment) => {
     newAppointment.forEach((oggetto) => {
-      creaCard(oggetto.imageUrl, oggetto.name, oggetto.description, oggetto._id);
+      creaCard(oggetto.imageUrl, oggetto.name, oggetto.description, oggetto._id, oggetto.price);
     });
   })
   .catch((err) => console.log(err));
